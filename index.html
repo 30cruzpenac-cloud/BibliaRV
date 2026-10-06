@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biblia Reina-Valera</title>
+
+<style>
+body{
+font-family:Arial;
+padding:20px;
+}
+
+.libro{
+color:blue;
+cursor:pointer;
+margin:8px 0;
+}
+
+button{
+padding:8px;
+margin:4px;
+}
+</style>
+
 </head>
 <body>
 
@@ -13,33 +31,91 @@
 
 <script>
 
-const libros = [
-"Génesis",
-"Éxodo",
-"Levítico",
-"Números",
-"Deuteronomio",
-"Josué",
-"Jueces",
-"Rut",
-"1 Samuel",
-"2 Samuel",
-"Mateo",
-"Marcos",
-"Lucas",
-"Juan",
-"Hechos",
-"Romanos",
-"Apocalipsis"
-];
+const libros = {
+"Génesis":50,
+"Éxodo":40,
+"Levítico":27,
+"Números":36,
+"Deuteronomio":34,
+"Josué":24,
+"Jueces":21,
+"Rut":4,
+"1 Samuel":31,
+"2 Samuel":24,
+"Mateo":28,
+"Marcos":16,
+"Lucas":24,
+"Juan":21,
+"Apocalipsis":22
+};
 
-let html = "<h2>Libros</h2>";
+mostrarLibros();
 
-for(let i=0;i<libros.length;i++){
-html += "<p>" + libros[i] + "</p>";
+function mostrarLibros(){
+
+let html="<h2>Libros</h2>";
+
+for(let libro in libros){
+
+html+=`
+<div class="libro"
+onclick="mostrarCapitulos('${libro}')">
+${libro}
+</div>
+`;
+
 }
 
-document.getElementById("contenido").innerHTML = html;
+document.getElementById("contenido").innerHTML=html;
+
+}
+
+function mostrarCapitulos(libro){
+
+let total=libros[libro];
+
+let html=`
+<h2>${libro}</h2>
+
+<button onclick="mostrarLibros()">
+⬅ Volver
+</button>
+<br><br>
+`;
+
+for(let i=1;i<=total;i++){
+
+html+=`
+<button onclick="mostrarVersiculos('${libro}',${i})">
+${i}
+</button>
+`;
+
+}
+
+document.getElementById("contenido").innerHTML=html;
+
+}
+
+function mostrarVersiculos(libro,capitulo){
+
+document.getElementById("contenido").innerHTML=`
+
+<h2>${libro} ${capitulo}</h2>
+
+<button onclick="mostrarCapitulos('${libro}')">
+⬅ Volver
+</button>
+
+<p>Versículos de ejemplo</p>
+
+<p>1. En el principio creó Dios los cielos y la tierra.</p>
+<p>2. Y la tierra estaba desordenada y vacía.</p>
+<p>3. Y dijo Dios: Sea la luz; y fue la luz.</p>
+
+`;
+
+}
 
 </script>
 
