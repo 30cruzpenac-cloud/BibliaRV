@@ -7,18 +7,19 @@
 
 <style>
 body{
-  font-family: Arial, sans-serif;
-  padding:20px;
+    font-family:Arial,sans-serif;
+    padding:20px;
 }
 
 button{
-  padding:10px 20px;
-  font-size:16px;
-  cursor:pointer;
+    padding:10px;
+    margin:5px;
+    cursor:pointer;
 }
 
-h1{
-  color:#003366;
+.libro{
+    cursor:pointer;
+    color:blue;
 }
 </style>
 
@@ -38,84 +39,32 @@ Comenzar
 function mostrarLibros(){
 
 document.getElementById("contenido").innerHTML = `
-
-<h2>📖 Antiguo Testamento</h2>
-
-<ul>
-<li>Génesis</li>
-<li>Éxodo</li>
-<li>Levítico</li>
-<li>Números</li>
-<li>Deuteronomio</li>
-<li>Josué</li>
-<li>Jueces</li>
-<li>Rut</li>
-<li>1 Samuel</li>
-<li>2 Samuel</li>
-<li>1 Reyes</li>
-<li>2 Reyes</li>
-<li>1 Crónicas</li>
-<li>2 Crónicas</li>
-<li>Esdras</li>
-<li>Nehemías</li>
-<li>Ester</li>
-<li>Job</li>
-<li>Salmos</li>
-<li>Proverbios</li>
-<li>Eclesiastés</li>
-<li>Cantares</li>
-<li>Isaías</li>
-<li>Jeremías</li>
-<li>Lamentaciones</li>
-<li>Ezequiel</li>
-<li>Daniel</li>
-<li>Oseas</li>
-<li>Joel</li>
-<li>Amós</li>
-<li>Abdías</li>
-<li>Jonás</li>
-<li>Miqueas</li>
-<li>Nahúm</li>
-<li>Habacuc</li>
-<li>Sofonías</li>
-<li>Hageo</li>
-<li>Zacarías</li>
-<li>Malaquías</li>
-</ul>
-
-<h2>📖 Nuevo Testamento</h2>
+<h2>📖 Libros</h2>
 
 <ul>
-<li>Mateo</li>
-<li>Marcos</li>
-<li>Lucas</li>
-<li>Juan</li>
-<li>Hechos</li>
-<li>Romanos</li>
-<li>1 Corintios</li>
-<li>2 Corintios</li>
-<li>Gálatas</li>
-<li>Efesios</li>
-<li>Filipenses</li>
-<li>Colosenses</li>
-<li>1 Tesalonicenses</li>
-<li>2 Tesalonicenses</li>
-<li>1 Timoteo</li>
-<li>2 Timoteo</li>
-<li>Tito</li>
-<li>Filemón</li>
-<li>Hebreos</li>
-<li>Santiago</li>
-<li>1 Pedro</li>
-<li>2 Pedro</li>
-<li>1 Juan</li>
-<li>2 Juan</li>
-<li>3 Juan</li>
-<li>Judas</li>
-<li>Apocalipsis</li>
+<li class="libro" onclick="mostrarCapitulos('Génesis',50)">Génesis</li>
+<li class="libro" onclick="mostrarCapitulos('Éxodo',40)">Éxodo</li>
+<li class="libro" onclick="mostrarCapitulos('Levítico',27)">Levítico</li>
+<li class="libro" onclick="mostrarCapitulos('Números',36)">Números</li>
+<li class="libro" onclick="mostrarCapitulos('Deuteronomio',34)">Deuteronomio</li>
+<li class="libro" onclick="mostrarCapitulos('Mateo',28)">Mateo</li>
+<li class="libro" onclick="mostrarCapitulos('Marcos',16)">Marcos</li>
+<li class="libro" onclick="mostrarCapitulos('Lucas',24)">Lucas</li>
+<li class="libro" onclick="mostrarCapitulos('Juan',21)">Juan</li>
+<li class="libro" onclick="mostrarCapitulos('Apocalipsis',22)">Apocalipsis</li>
 </ul>
-
 `;
+}
+
+function mostrarCapitulos(libro,total){
+
+let html = `<h2>${libro}</h2>`;
+
+for(let i=1;i<=total;i++){
+html += `<button>${i}</button>`;
+}
+
+document.getElementById("contenido").innerHTML = html;
 
 }
 
