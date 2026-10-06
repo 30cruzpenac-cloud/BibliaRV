@@ -6,21 +6,37 @@
 <title>Biblia Reina-Valera</title>
 
 <style>
+
 body{
-    font-family:Arial,sans-serif;
+    font-family: Arial, sans-serif;
     padding:20px;
+    background:#f4f4f4;
+    transition:0.3s;
+}
+
+h1{
+    color:#003366;
+}
+
+#busqueda{
+    padding:10px;
+    width:250px;
+    margin-bottom:10px;
 }
 
 button{
     padding:10px;
-    margin:5px;
+    margin:4px;
     cursor:pointer;
 }
 
 .libro{
-    cursor:pointer;
     color:blue;
+    cursor:pointer;
+    margin:5px 0;
+    font-size:18px;
 }
+
 </style>
 
 </head>
@@ -28,47 +44,96 @@ button{
 
 <h1>📖 Biblia Reina-Valera</h1>
 
-<button onclick="mostrarLibros()">
-Comenzar
+<input
+id="busqueda"
+type="text"
+placeholder="Buscar libro..."
+onkeyup="filtrarLibros()">
+
+<button onclick="modoOscuro()">
+🌙 Modo Oscuro
 </button>
 
 <div id="contenido"></div>
 
 <script>
 
+let oscuro = false;
+
+const libros = [
+
+["Génesis",50],
+["Éxodo",40],
+["Levítico",27],
+["Números",36],
+["Deuteronomio",34],
+["Josué",24],
+["Jueces",21],
+["Rut",4],
+["1 Samuel",31],
+["2 Samuel",24],
+["1 Reyes",22],
+["2 Reyes",25],
+["1 Crónicas",29],
+["2 Crónicas",36],
+["Esdras",10],
+["Nehemías",13],
+["Ester",10],
+["Job",42],
+["Salmos",150],
+["Proverbios",31],
+["Eclesiastés",12],
+["Cantares",8],
+["Isaías",66],
+["Jeremías",52],
+["Lamentaciones",5],
+["Ezequiel",48],
+["Daniel",12],
+["Oseas",14],
+["Joel",3],
+["Amós",9],
+["Abdías",1],
+["Jonás",4],
+["Miqueas",7],
+["Nahúm",3],
+["Habacuc",3],
+["Sofonías",3],
+["Hageo",2],
+["Zacarías",14],
+["Malaquías",4],
+
+["Mateo",28],
+["Marcos",16],
+["Lucas",24],
+["Juan",21],
+["Hechos",28],
+["Romanos",16],
+["1 Corintios",16],
+["2 Corintios",13],
+["Gálatas",6],
+["Efesios",6],
+["Filipenses",4],
+["Colosenses",4],
+["1 Tesalonicenses",5],
+["2 Tesalonicenses",3],
+["1 Timoteo",6],
+["2 Timoteo",4],
+["Tito",3],
+["Filemón",1],
+["Hebreos",13],
+["Santiago",5],
+["1 Pedro",5],
+["2 Pedro",3],
+["1 Juan",5],
+["2 Juan",1],
+["3 Juan",1],
+["Judas",1],
+["Apocalipsis",22]
+
+];
+
+mostrarLibros();
+
 function mostrarLibros(){
 
-document.getElementById("contenido").innerHTML = `
-<h2>📖 Libros</h2>
-
-<ul>
-<li class="libro" onclick="mostrarCapitulos('Génesis',50)">Génesis</li>
-<li class="libro" onclick="mostrarCapitulos('Éxodo',40)">Éxodo</li>
-<li class="libro" onclick="mostrarCapitulos('Levítico',27)">Levítico</li>
-<li class="libro" onclick="mostrarCapitulos('Números',36)">Números</li>
-<li class="libro" onclick="mostrarCapitulos('Deuteronomio',34)">Deuteronomio</li>
-<li class="libro" onclick="mostrarCapitulos('Mateo',28)">Mateo</li>
-<li class="libro" onclick="mostrarCapitulos('Marcos',16)">Marcos</li>
-<li class="libro" onclick="mostrarCapitulos('Lucas',24)">Lucas</li>
-<li class="libro" onclick="mostrarCapitulos('Juan',21)">Juan</li>
-<li class="libro" onclick="mostrarCapitulos('Apocalipsis',22)">Apocalipsis</li>
-</ul>
-`;
-}
-
-function mostrarCapitulos(libro,total){
-
-let html = `<h2>${libro}</h2>`;
-
-for(let i=1;i<=total;i++){
-html += `<button>${i}</button>`;
-}
-
-document.getElementById("contenido").innerHTML = html;
-
-}
-
-</script>
-
-</body>
-</html>
+let
