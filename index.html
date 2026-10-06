@@ -4,59 +4,44 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biblia Reina-Valera</title>
-
-<style>
-body{
-  font-family: Arial, sans-serif;
-  padding:20px;
-}
-
-h1{
-  color:#003366;
-}
-
-.libro{
-  color:blue;
-  cursor:pointer;
-  margin:6px 0;
-  font-size:18px;
-}
-
-button{
-  padding:8px;
-  margin:4px;
-}
-</style>
-
 </head>
 <body>
 
 <h1>📖 Biblia Reina-Valera</h1>
 
-<input
-id="buscar"
-type="text"
-placeholder="Buscar libro..."
-onkeyup="filtrar()">
-
-<button onclick="modoOscuro()">🌙 Modo Oscuro</button>
-
 <div id="contenido"></div>
 
 <script>
 
-let oscuro = false;
-
 const libros = [
-["Génesis",50],
-["Éxodo",40],
-["Levítico",27],
-["Números",36],
-["Deuteronomio",34],
-["Josué",24],
-["Jueces",21],
-["Rut",4],
-["1 Samuel",31],
-["2 Samuel",24],
-["1 Reyes",22],
-["2 Reyes",25
+"Génesis",
+"Éxodo",
+"Levítico",
+"Números",
+"Deuteronomio",
+"Josué",
+"Jueces",
+"Rut",
+"1 Samuel",
+"2 Samuel",
+"Mateo",
+"Marcos",
+"Lucas",
+"Juan",
+"Hechos",
+"Romanos",
+"Apocalipsis"
+];
+
+let html = "<h2>Libros</h2>";
+
+for(let i=0;i<libros.length;i++){
+html += "<p>" + libros[i] + "</p>";
+}
+
+document.getElementById("contenido").innerHTML = html;
+
+</script>
+
+</body>
+</html>
