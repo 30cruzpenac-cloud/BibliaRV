@@ -4,6 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Biblia Reina-Valera</title>
+
+<style>
+body{
+  font-family: Arial, sans-serif;
+  padding:20px;
+}
+
+button{
+  padding:10px 20px;
+  font-size:16px;
+  cursor:pointer;
+}
+
+h1{
+  color:#003366;
+}
+</style>
+
 </head>
 <body>
 
@@ -13,12 +31,16 @@
 Comenzar
 </button>
 
-<div id="libros"></div>
+<div id="contenido"></div>
 
 <script>
+
 function mostrarLibros(){
-document.getElementById("libros").innerHTML = `
-<h2>Libros</h2>
+
+document.getElementById("contenido").innerHTML = `
+
+<h2>📖 Antiguo Testamento</h2>
+
 <ul>
 <li>Génesis</li>
 <li>Éxodo</li>
@@ -30,16 +52,73 @@ document.getElementById("libros").innerHTML = `
 <li>Rut</li>
 <li>1 Samuel</li>
 <li>2 Samuel</li>
+<li>1 Reyes</li>
+<li>2 Reyes</li>
+<li>1 Crónicas</li>
+<li>2 Crónicas</li>
+<li>Esdras</li>
+<li>Nehemías</li>
+<li>Ester</li>
+<li>Job</li>
+<li>Salmos</li>
+<li>Proverbios</li>
+<li>Eclesiastés</li>
+<li>Cantares</li>
+<li>Isaías</li>
+<li>Jeremías</li>
+<li>Lamentaciones</li>
+<li>Ezequiel</li>
+<li>Daniel</li>
+<li>Oseas</li>
+<li>Joel</li>
+<li>Amós</li>
+<li>Abdías</li>
+<li>Jonás</li>
+<li>Miqueas</li>
+<li>Nahúm</li>
+<li>Habacuc</li>
+<li>Sofonías</li>
+<li>Hageo</li>
+<li>Zacarías</li>
+<li>Malaquías</li>
+</ul>
+
+<h2>📖 Nuevo Testamento</h2>
+
+<ul>
 <li>Mateo</li>
 <li>Marcos</li>
 <li>Lucas</li>
 <li>Juan</li>
 <li>Hechos</li>
 <li>Romanos</li>
+<li>1 Corintios</li>
+<li>2 Corintios</li>
+<li>Gálatas</li>
+<li>Efesios</li>
+<li>Filipenses</li>
+<li>Colosenses</li>
+<li>1 Tesalonicenses</li>
+<li>2 Tesalonicenses</li>
+<li>1 Timoteo</li>
+<li>2 Timoteo</li>
+<li>Tito</li>
+<li>Filemón</li>
+<li>Hebreos</li>
+<li>Santiago</li>
+<li>1 Pedro</li>
+<li>2 Pedro</li>
+<li>1 Juan</li>
+<li>2 Juan</li>
+<li>3 Juan</li>
+<li>Judas</li>
 <li>Apocalipsis</li>
 </ul>
+
 `;
+
 }
+
 </script>
 
 </body>
