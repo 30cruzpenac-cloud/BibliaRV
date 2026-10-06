@@ -1,0 +1,25 @@
+{
+  "libro": "Génesis",
+  "capitulos": {
+    "1": [
+      {
+        "versiculo": 1,
+        "texto": "En el principio creó Dios los cielos y la tierra."
+      },
+      {
+        "versiculo": 2,
+        "texto": "Y la tierra estaba desordenada y vacía."
+      },
+      {
+        "versiculo": 3,
+        "texto": "Y dijo Dios: Sea la luz; y fue la luz."
+      }
+    ],
+    "2": [
+      {
+        "versiculo": 1,
+        "texto": "Fueron, pues, acabados los cielos y la tierra."
+      }
+    ]
+  }
+}
