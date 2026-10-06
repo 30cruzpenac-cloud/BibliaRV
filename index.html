@@ -1,123 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Biblia Reina-Valera</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>📖 Biblia Reina-Valera</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-font-family:Arial;
+font-family:Arial,sans-serif;
+background:#f4f6f9;
 padding:20px;
 }
 
-.libro{
-color:blue;
-cursor:pointer;
-margin:8px 0;
+header{
+text-align:center;
+margin-bottom:20px;
+}
+
+header h1{
+color:#1e3a8a;
+font-size:36px;
+}
+
+header p{
+color:#666;
+}
+
+#buscar{
+width:100%;
+max-width:400px;
+padding:12px;
+border-radius:10px;
+border:1px solid #ccc;
+margin-top:15px;
+font-size:16px;
+}
+
+#acciones{
+margin-top:15px;
 }
 
 button{
-padding:8px;
+padding:10px 15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+background:#2563eb;
+color:white;
+font-weight:bold;
+margin:3px;
+}
+
+button:hover{
+background:#1d4ed8;
+}
+
+#contenido{
+margin-top:25px;
+}
+
+.libro{
+background:white;
+padding:15px;
+margin-bottom:10px;
+border-radius:12px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,0.10);
+transition:.3s;
+}
+
+.libro:hover{
+transform:translateY(-2px);
+}
+
+.capitulo{
+width:60px;
 margin:4px;
 }
-</style>
 
+.oscuro{
+background:#111827;
+color:white;
+}
+
+.oscuro .libro{
+background:#1f2937;
+color:white;
+}
+
+.oscuro #buscar{
+background:#1f2937;
+color:white;
+border:1px solid #444;
+}
+
+</style>
 </head>
+
 <body>
+
+<header>
 
 <h1>📖 Biblia Reina-Valera</h1>
 
-<div id="contenido"></div>
-
-<script>
-
-const libros = {
-"Génesis":50,
-"Éxodo":40,
-"Levítico":27,
-"Números":36,
-"Deuteronomio":34,
-"Josué":24,
-"Jueces":21,
-"Rut":4,
-"1 Samuel":31,
-"2 Samuel":24,
-"Mateo":28,
-"Marcos":16,
-"Lucas":24,
-"Juan":21,
-"Apocalipsis":22
-};
-
-mostrarLibros();
-
-function mostrarLibros(){
-
-let html="<h2>Libros</h2>";
-
-for(let libro in libros){
-
-html+=`
-<div class="libro"
-onclick="mostrarCapitulos('${libro}')">
-${libro}
-</div>
-`;
-
-}
-
-document.getElementById("contenido").innerHTML=html;
-
-}
-
-function mostrarCapitulos(libro){
-
-let total=libros[libro];
-
-let html=`
-<h2>${libro}</h2>
-
-<button onclick="mostrarLibros()">
-⬅ Volver
-</button>
-<br><br>
-`;
-
-for(let i=1;i<=total;i++){
-
-html+=`
-<button onclick="mostrarVersiculos('${libro}',${i})">
-${i}
-</button>
-`;
-
-}
-
-document.getElementById("contenido").innerHTML=html;
-
-}
-
-function mostrarVersiculos(libro,capitulo){
-
-document.getElementById("contenido").innerHTML=`
-
-<h2>${libro} ${capitulo}</h2>
-
-<button onclick="mostrarCapitulos('${libro}')">
-⬅ Volver
-</button>
-
-<p>Versículos de ejemplo</p>
-
-<p>1. En el principio creó Dios los cielos y la tierra.</p>
-<p>2. Y la tierra estaba desordenada y vacía.</p>
-<p>3. Y dijo Dios: Sea la luz; y fue la luz.</p>
-
-`;
-
-}
-
-</script>
-
-</body>
-</html>
+<p>
